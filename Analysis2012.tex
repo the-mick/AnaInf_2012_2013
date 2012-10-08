@@ -1,0 +1,103 @@
+\documentclass[11pt, oneside, a4paper]{article}
+\usepackage{ifpdf}
+\usepackage[colorlinks,bookmarksopen]{hyperref}
+\usepackage{color}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{cancel}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\begin{titlepage}
+\title{Analysis für Informatiker 2012/13}
+\author{bei Prof. Dr. Lau}
+\date{October 08, 2012}
+\maketitle
+\end{titlepage}
+\newpage
+\tableofcontents
+\newpage
+\section*{1 Mengen}
+\subsection*{1.1 Definition}
+\subsubsection*{1)}
+Eine Menge ist eine Ansammlung verschiedener Objekte.
+\subsubsection*{2)}
+Die Objekte einer Menge heißen \underline{Elemente}. \\ \\
+\textit{Notation:} \\
+$a \in M$ heißt: $a$ ist Element der Menge $M$ \\
+$a \notin M$ heißt: $a$ ist kein Element der Menge $M$
+\subsubsection*{3)}
+Sei $M$ eine Menge. Eine Menge $U$ heißt Teilmenge von $M$, wenn jedes Element von $U$ auch ein Element von $M$ ist. \\
+\textit{Notation:} \\
+$U \subseteq M$ heißt: $U$ ist Teilmenge der Menge $M$ \\
+$U \not \subseteq M$ heißt: $U$ ist keine Teilmenge der Menge $M$
+\subsection*{1.2 Beispiele}
+\subsubsection*{1)}
+Sei $M$ die Menge aller Studierenden in L1, \\
+$W$ die Menge aller weiblichen Studierenden in L1, \\
+$F$ die Menge aller Frauen. \\ \\
+Dann gilt: $W \subseteq M, W \subseteq F, M \not \subseteq F, F \not \subseteq M$.
+\subsubsection*{2)}
+Die Menge der natürlichen Zahlen: $\mathbb+{N}=\{1,2,3,..\}$ \\ \\
+G sei Menge der geraden natürlichen Zahlen. \\
+$G := \{n \in \mathbb{N} |$ $n$ gerade $\}$ \\
+\hphantom{spaces}$ := \{2m | m \in \mathbb{N}\}$ \\
+\hphantom{spaces}$ := \{2,4,6,8,...\}$ \\ \\
+Es gilt $G \subseteq \mathbb{N}$, $\mathbb{N} \not \subseteq G$.
+\subsubsection*{3)}
+Die Menge der ganzen Zahlen: \\
+$\mathbb{Z} = \{0,-1,1,-2,2,...\}$
+\subsubsection*{4)}
+Menge der rationalen Zahlen: \\
+$\mathbb{Q} = \frac{a}{b} | a,b \in \mathbb{Z}, b \not = 0\}$
+\subsubsection*{5)}
+Die Menge ohne Elemente heißt \underline{leere Menge}. \\
+\textit{Symbol:} $\emptyset = \{\}$ \\ \\
+\framebox{Bemerkung} \\
+\hphantom{spaces} Für jede Menge $M$ gilt: $\emptyset \subseteq M$ \\
+\hphantom{spaces} $\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q}$
+\subsection*{1.3 Definition}
+Sei $M$ eine Menge, $U,V \subseteq M$ Teilmengen.
+\subsubsection*{1)}
+Die Vereinigung von $U$ und $V$ ist $U \cup V := \{x \in M | x \in U$ oder $x \in V\}$
+\subsubsection*{2)}
+Der Durchschnitt von $U$ und $V$ ist $U \cap V := \{x \in M | x \in U$ oder $x \in V\}$
+\subsubsection*{3)}
+Die Differenzmenge von $U$ und $V$ ist $U \slash V := \{x \in U | x \not \in V\}$
+\subsubsection*{4)}
+Das Komplement von $U$ ist $U^c = M \slash U = \{x \in M | x \not \in U\}$ \\ \\
+\textit{Beispiel} \\
+Sei $M = \mathbb{N}$.\\
+$\{1,3\} \cup \{3,5\} = \{1,3,5\}$ \\
+$\{1,3\} \cap \{3,5\} = \{3\}$ \\
+$\{1,3\} \cap \{2,4,7\} = \emptyset$ ,also sind $\{1,3\}$ und $\{2,4,7\}$ disjunkt. \\
+$\{1,2,3\} \slash \{3,4,5\} = \{1,2\}$ \\
+$\{1,3,5\}^c = \{2,4,6,7,8,...\}$
+\subsection*{1.4 (de Morgansche Regeln)}
+$M$ Menge, $U,V \subseteq M$ Teilmengen.
+\subsubsection*{1)}
+$(U \cup V)^c = U^c \cap V^c$
+\subsubsection*{2)}
+$(U \cap V)^c = U^c \cup V^c$ \\ \\
+\subsection*{Beweis}
+\subsubsection*{1)}
+Sei $x \in M$. Es gilt: \\
+$x \in (U \cup V)^c \Leftrightarrow x \not \in U \cup V \Leftrightarrow x \not \in U$ und $x \not \in V$ \\ 
+$\Leftrightarrow x \in U^c $ und $x \in V^c \Leftrightarrow x \in U^c \cap V^c$ \\
+\hphantom{spaces}\hphantom{spaces}\hphantom{spaces}\hphantom{spaces}\hphantom{spaces}\hphantom{spaces}\hphantom{spaces}$\square$
+\subsubsection*{2)}
+Übungsaufgabe
+\newpage
+\framebox{Vollständige Induktion}
+\subsection*{1.5 Prinzip der vollständigen Induktion}
+Für jedes $n \in \mathbb{N}$ sei eine Aussage $A(n)$ gegeben. \\
+Ziel: Beweisen, dass $A(n)$ für jedes $n \in \mathbb{N}$ wahr ist.\\
+Dafür reicht es zu zeigen:
+\subsubsection*{1)}
+Induktionsanfang: $A(1)$ ist wahr. 
+\subsubsection*{2)}
+Induktionsschritt: Wenn für ein $n \in \mathbb{N}$ $A(n)$ wahr ist, dann ist auch $A(n+1)$ wahr.
+\end{document}
